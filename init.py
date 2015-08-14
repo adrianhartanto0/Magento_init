@@ -8,11 +8,13 @@ if(len(sys.argv) != 3):
 for x in [1,2]:
 	dir1 = os.getcwd() + "/" + sys.argv[x];
 	os.mkdir(dir1);
+	os.chmod(dir1,0o755)
 	os.chdir(dir1);
 
 targetDir1 = os.getcwd();
 for x in ["/Block","/controllers","/etc","/Helper","/Model","/sql"]:
 	os.mkdir(targetDir1 + x);
+	os.chmod(targetDir1 + x,0o755);
 
 os.chdir(targetDir1 + "/etc");
 file = open("config.xml","wb");
